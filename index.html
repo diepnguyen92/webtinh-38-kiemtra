@@ -18,7 +18,28 @@
 </head>
 
 <body>
-   <div class="top-hearder">
+  <!-- giỏ hàng -->
+  <div class="cart-modal-overlay">
+    <div class="cart-modal">
+      <i id="close-btn" class="fas fa-times"></i>
+      <h1 class="cart-is-empty">chưa có sản phẩm nào</h1> 
+      <!-- <img class="cart-image" src="https://img.mayflower.vn/2024/02/750k-shimmer-kemdau-thuy-chau-1-247x296.jpg" alt="">
+      <span class="cart-price">300000</span>
+      <input class="product-quantity" type="number" value="1">
+      <button class="remove-btn">Xoá</button> -->
+    <div class="product-rows"></div>
+    <!--thêm sp ở đây-->
+    <div class="total">
+      <h1 class="cart-total">TỔNG TIỀN</h1>
+      <span class="total-price">0</span>
+      <button class="purchase-btn">Mua ngay</button>
+    </div>  </div>
+  </div>
+</div>
+
+  </div>
+<!-- top header main -->
+     <div class="top-hearder">
     <div class="container">
         <div class="wrap-hearder">
             <div class="logo">Logo</div>
@@ -29,10 +50,12 @@
             <div class="acount-bag">
                 <div class="acount"><a href="##">Đăng Nhập <span>/</span>Đăng ký</a></div>
                 <div class="bag-main">
-                <div class="bag"><i class="fa-solid fa-bag-shopping"></i></div>
+                <div class="bag"><i class="fa-solid fa-cart-shopping"></i> 
+                  
+                </div>
                 <div class="bag-product">0</div></div>
-            </div>
-        </div></div></div>
+            </div></div>
+        </div>
         <!-- menu desktop-->
    <div class="menu-main">
     <div class="container">
@@ -46,7 +69,7 @@
                 <li>Hoa Khai trương</li>
 
             </ul>
-        </div></div></div>
+        </div></div></div></div>
         <!-- baner slie -->
 <div class="baner-slide">
     <div class="owl-carousel owl-theme">
@@ -65,8 +88,21 @@
       </div>
 
       <div class="tab-content tab-1 active">
-        <div class="row row-js-tt">
+        <div class="row row-js-hot">
           <div class="col-12 col-sm-6 col-md-3">
+            <div class="content">
+             <img src="https://img.mayflower.vn/2024/02/750k-shimmer-kemdau-thuy-chau-1-247x296.jpg" alt="ảnh 2">
+             <div class="content2">
+             <div class="name-price">
+              <div class="name">Nhẹ nhàng</div>
+              <div class="price">350.000đ</div>
+             </div>
+            <button class="cart"><i class="fa-solid fa-cart-plus"></i> Mua ngay</button>
+          
+            </div>
+            </div>
+          </div>
+          <!-- <div class="col-12 col-sm-6 col-md-3">
             <div class="content"></div>
           </div>
           <div class="col-12 col-sm-6 col-md-3">
@@ -74,16 +110,13 @@
           </div>
           <div class="col-12 col-sm-6 col-md-3">
             <div class="content"></div>
-          </div>
-          <div class="col-12 col-sm-6 col-md-3">
-            <div class="content"></div>
-          </div>
+          </div> -->
         </div>
       </div>
 
       <div class="tab-content tab-2">
-        <div class="row row-js-ts">
-          <div class="col-12 col-sm-6 col-md-3">
+        <div class="row row-js-new">
+          <!-- <div class="col-12 col-sm-6 col-md-3">
             <div class="content"></div>
           </div>
           <div class="col-12 col-sm-6 col-md-3">
@@ -94,7 +127,7 @@
           </div>
           <div class="col-12 col-sm-6 col-md-3">
             <div class="content"></div>
-          </div>
+          </div> -->
         </div>
       </div></div></div>
     <!-- product 1 -->
@@ -103,8 +136,8 @@
       </div>
       <div class="product-sp">
             <div class="container">
-                <div class="row row-js">
-                    <div class="col-12 col-sm-6 col-md-3">
+                <div class="row row-js-ht">
+                    <!-- <div class="col-12 col-sm-6 col-md-3">
                       <div class="content"></div>
                     </div>
                     <div class="col-12 col-sm-6 col-md-3">
@@ -115,7 +148,7 @@
                     </div>
                     <div class="col-12 col-sm-6 col-md-3">
                       <div class="content"></div>
-                    </div>
+                    </div> -->
                   </div>
          </div>
         </div>
@@ -125,8 +158,8 @@
       </div>
       <div class="product-sp">
             <div class="container">
-                <div class="row row-js">
-                    <div class="col-12 col-sm-6 col-md-3">
+                <div class="row row-js-hs">
+                    <!-- <div class="col-12 col-sm-6 col-md-3">
                       <div class="content"></div>
                     </div>
                     <div class="col-12 col-sm-6 col-md-3">
@@ -138,7 +171,7 @@
                     <div class="col-12 col-sm-6 col-md-3">
                       <div class="content"></div>
                     </div>
-                  </div>
+                  </div> -->
          </div>
         </div>
            <!-- product 3-->
@@ -147,8 +180,8 @@
         </div>
         <div class="product-sp">
               <div class="container">
-                  <div class="row row-js">
-                      <div class="col-12 col-sm-6 col-md-3">
+                  <div class="row row-js-hsn">
+                      <!-- <div class="col-12 col-sm-6 col-md-3">
                         <div class="content"></div>
                       </div>
                       <div class="col-12 col-sm-6 col-md-3">
@@ -159,18 +192,18 @@
                       </div>
                       <div class="col-12 col-sm-6 col-md-3">
                         <div class="content"></div>
-                      </div>
+                      </div> -->
                     </div>
            </div>
           </div>
            <!-- product 4-->
            <div class="title-product">
-            <h3>Hoa Khai trương</h3>
+            <h3>Hoa Bó</h3>
           </div>
           <div class="product-sp">
                 <div class="container">
-                    <div class="row row-js">
-                        <div class="col-12 col-sm-6 col-md-3">
+                    <div class="row row-js-hb">
+                        <!-- <div class="col-12 col-sm-6 col-md-3">
                           <div class="content"></div>
                         </div>
                         <div class="col-12 col-sm-6 col-md-3">
@@ -180,8 +213,32 @@
                           <div class="content"></div>
                         </div>
                         <div class="col-12 col-sm-6 col-md-3">
+                          <div class="content"> -->
+              
+                          </div>
+                        </div> 
+                      </div>
+                 <!-- product 5-->
+           <div class="title-product">
+            <h3>Lẵng Hoa</h3>
+          </div>
+          <div class="product-sp">
+                <div class="container">
+                    <div class="row row-js-hl">
+                        <!-- <div class="col-12 col-sm-6 col-md-3">
                           <div class="content"></div>
                         </div>
+                        <div class="col-12 col-sm-6 col-md-3">
+                          <div class="content"></div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-3">
+                          <div class="content"></div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-3">
+                          <div class="content"> -->
+              
+                          </div>
+                        </div> 
                       </div>
              </div>
             </div>
@@ -208,13 +265,30 @@
               <ul>
             </div>
             <div class="col-12 col-sm-6 col-md-3">
-              <div class="content">Tin tức</div>
+              <div class="content">Tin tức
+                <ul>
+                  <li>Giới thiệu về hoa</li>
+                  <li>Cẩm nang</li>
+                  <li>Khuyến mãi</li>
+                </ul>
+              </div>
+
             </div>
             <div class="col-12 col-sm-6 col-md-3">
-              <div class="content"> Liên hệ</div>
+              <div class="content"> Liên hệ
+                <ul>
+                  <li>Địa chỉ : số 03, Đường Hùng Vương, TP.Việt Trì, Tỉnh Phú Thọ</li>
+                  <li>Email : <a href="#">nguyendiep.kttm@gmail.com</a></li>
+                </ul>
+              </div>
             </div>
         </div>
-
+      </div>
+      <div class="mesenger"> chat
+        <div class="mesenger-main">
+          <button class="close-ms"><i class="fa-solid fa-xmark"></i></button><br>
+          <input type="text" placeholder="nhập nội dung">
+        </div>
       </div>
 
 
@@ -225,6 +299,7 @@
    <!-- import owcarousel -->
    <script src="./lib/owlcarousel/owl.carousel.min.js"></script>
    <script src="./assets/js/custom.js"></script>
-
+<!-- import js -->
+<script src="./assets/js/data.js"></script>
 </body>
 </html>

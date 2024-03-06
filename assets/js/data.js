@@ -11,62 +11,70 @@ const data = [
     name : "Mặt trời mộng mơ",
     price: 900000,
     image:"https://img.mayflower.vn/2024/02/900k-cmd-maoluong-phang-mustang-2-5-1-247x296.jpg",
-    title: "Hoa tuoi"
+    title: "Hoa tuoi",
+    category : "hot"
   },
   {
     id : 3,
     name : "Má em ửng hồng",
     price: 1200000,
     image:"https://img.mayflower.vn/2023/07/z4502838348593_eaea5990495885316972623f11ce3363-247x296.jpg",
-    title: "Hoa tuoi"
+    title: "Hoa tuoi",
+    category : "hot"
   },
   {
     id : 4,
     name : "Tia nắng lung linh",
     price: 1000000,
     image:"https://img.mayflower.vn/2023/12/1100k-capu-maoluong-247x296.jpg",
-    title: "Hoa tuoi"
+    title: "Hoa tuoi",
+    category : "hot"
   },  {
     id : 5,
     name : "Mặt trời chói trang",
     price: 800000,
     image:"https://img.mayflower.vn/2023/11/2000k-cucmaudontulip-2-247x296.jpg",
-    title: "Hoa tuoi"
+    title: "Hoa tuoi",
+    category : "hot"
   }, 
    {
     id : 6,
     name : "Hương Gió Bay",
     price: 1000000,
     image:"https://img.mayflower.vn/2024/02/1000k-tulip-phiyen-phang-tuongxoan-4-247x296.jpg",
-    title: "Hoa tuoi"
+    title: "Hoa tuoi",
+    category : "new"
   },
   {
     id : 7,
     name : "Kết Nối Yêu Thương",
     price: 1500000,
     image:"https://img.mayflower.vn/2023/11/2100k-cam-CM-lan-ho-diep-tulip-ngoc-trai-2-247x296.jpg",
-    title: "Hoa tuoi"
+    title: "Hoa tuoi",
+    category : "new"
   },
   {
     id : 7,
     name : "Đừng quên tên anh",
     price: 850000,
     image:"https://img.mayflower.vn/2018/10/dung-quen-ten-anh-1-2-247x296.jpg",
-    title: "Hoa tuoi"
+    title: "Hoa tuoi",
+    category : "new",
   },
   {
     id : 8,
     name : "Ngôi Sao cô đơn",
     price: 850000,
     image:"https://img.mayflower.vn/2022/08/ngoi-sao-co-don-247x296.jpg",
-    title: "Hoa tuoi"
+    title: "Hoa tuoi",
+    category : "new",
   },
   {
     id : 9,
     name : "Cột dây tơ duyên",
     price: 650000,
     image:"https://img.mayflower.vn/2022/09/cot-day-to-duyen-247x296.jpg",
-    title: "Hoa tuoi"
+    title: "Hoa tuoi",
   },
   {
     id : 10,
@@ -98,14 +106,14 @@ const data = [
   },
   {
     id : 14,
-    name : "Bó Hoa Hồng Sáp Tiểu Thư ",
+    name : "Bó Hoa Hồng Sáp",
     price: 4000000,
     image:"https://product.hstatic.net/200000427529/product/0f52e6b5-5f6d-4b24-84d3-33ee7886710f_9c73e8df97b24ae6be2627a89ef9975e_master.jpg",
     title: "Hoa Sap"
   },
   {
     id : 16,
-    name : "Bó Hoa Sáp 99 Bông Vàng Gold ",
+    name : "Bó 99 Bông Vàng Gold ",
     price: 1700000,
     image:"https://product.hstatic.net/200000427529/product/90c1ae11-721d-489b-9a35-21b9c8230ff8_f3cdf3df4f5447fab4771a948b66cc94_master.jpg",
     title: "Hoa Sap"
@@ -120,7 +128,7 @@ const data = [
 
   {
     id : 18,
-    name : "Bó Hoa Hồng Sáp Mix Baby",
+    name : "Bó Hoa Hồng Sáp Baby",
     price: 1700000,
     image:"https://product.hstatic.net/200000427529/product/aaa856db-caba-441a-9d21-0298b72d9b92_96868dc692944472a5445f48517e64e0_master.jpg",
     title: "Hoa Sap"
@@ -292,12 +300,210 @@ const data = [
     price: 1700000,
     image:"https://img.mayflower.vn/2023/07/2300k-247x296.jpg",
     title: "ke hoa"
-  },
+  }];
+  
+// truy cập phần tử
+let rowJsHt = document.querySelector(".row-js-ht")
+let rowJsHs = document.querySelector(".row-js-hs")
+let rowjsHsn = document.querySelector(".row-js-hsn")
+let rowJsHkt = document.querySelector(".row-js-hb")
+let rowJsHl = document.querySelector(".row-js-hl")
+// try cập phần tử tab listing
+let rowHot = document.querySelector(".row-js-hot")
+let rowNew = document.querySelector(".row-js-new")
+// lọc tittle
+const getData = (list,value)=>{
+  return list.filter((item)=>{
+return item.title ===value
+  })};
 
+  // lọc categoty
+const getDataHn = (list,value)=>{
+  return list.filter((item)=>{
+return item.category ===value
+  })};
+// console.log(getDataHn(data,"hot"));
+  const listDataHt = getData(data, "Hoa tuoi");
+  // console.log(listDataHt);
+  const listDataHs = getData(data, "Hoa Sap");
+  const listDataHsn = getData(data, "Hoa Gio")
+  const listDataHkt = getData(data, "Hoa bo")
+  const listDataHl = getData(data, "Lang hoa")
+  // sp hot, new
+  const listDataHot = getDataHn(data, "hot")
+  const listDataNew = getDataHn(data, "new")
+  // render data => HTML
+  const renderData = (listData)=>{
+    let HTML = ``
+    listData.forEach((item) => {
+      HTML +=` <div class="col-12 col-sm-6 col-md-3">
+      <div class="content">
+      <img class="image" src="${item.image}" alt="${item.name}">
+      <div class="content2">
+      <div class="name-price">
+       <div class="name">${item.name}</div>
+       <div class="price">${item.price}</div>
+      </div>
+      <button class="cart"><i class="fa-solid fa-cart-plus"></i> Mua ngay</button>
+      </div></div></div>`
+    });
+    return HTML;
+  
+  };
 
+  rowJsHt.innerHTML = renderData(listDataHt);
+  rowJsHs.innerHTML = renderData(listDataHs);
+  rowjsHsn.innerHTML = renderData(listDataHsn);
+  rowJsHkt.innerHTML = renderData(listDataHkt);
+  rowJsHl.innerHTML = renderData(listDataHl);
 
+  
+rowHot.innerHTML = renderData(listDataHot)
+rowNew.innerHTML = renderData(listDataNew)
+  // truy cập sp bán chạy, new
+  let btnListing = document.querySelectorAll('.btn-listing');
+let tabContent = document.querySelectorAll('.tab-content');
+// tab listing
+// Tab listing Product
+const listingProduct = (btn, tab) => {
+  btn.forEach((button, index) => {
 
+    button.addEventListener('click', () => {
+      // Remove active old
+      btn.forEach((item) => {
+        item.classList.remove('active');
+      })
+      tab.forEach((value) => {
+        value.classList.remove('active');
+      })
+      // Add active new with click button
+      button.classList.add('active');
+      tabContent[index].classList.add('active');
+    });
 
+  })
 
+}
+listingProduct(btnListing, tabContent);
+// tạo chat mesenger
+// truy cập phần tử mesenger
+let mesenger = document.querySelector(".mesenger")
+let msMain = document.querySelector(".mesenger-main")
+let closeButton = document.querySelector(".close-ms")
+// console.log(closeButton);
+// console.log(mesenger);
+mesenger.addEventListener('click', ()=>{
+ msMain.classList.toggle("active") });
+ msMain.addEventListener('click', (event) => {
+  event.stopPropagation();
+});
+// đóng mesenger khi click vào màn hình và button
 
-]
+document.addEventListener('click', (event) => {
+  if (!mesenger.contains(event.target)) {
+      msMain.classList.remove("active");
+  }
+});
+closeButton.addEventListener('click',()=>{
+  msMain.classList.remove("active")
+})
+//  giỏ hàng
+// truy cập phần tử
+let cart = document.querySelector(".bag")
+// console.log(cart);
+let cartModalOverlay = document.querySelector(".cart-modal-overlay");
+let closeBtn = document.querySelector("#close-btn")
+// thêm sự kiệN mở giỏ hàng
+cart.addEventListener("click",()=>{
+  // alert("123")
+  cartModalOverlay.style.transform = "translateX(0)";
+});
+//  đóng giỏ hàng
+closeBtn.addEventListener("click",()=>{
+  cartModalOverlay.style.transform = "translateX(-200%)"
+});
+// đóng khi click ra ngoài màn hình
+cartModalOverlay.addEventListener("click", (event) => {
+  if (event.target.classList.contains("cart-modal-overlay") == true) {
+    cartModalOverlay.style.transform = "translateX(-200%)";
+  }
+});
+// thêm sản phẩm vào trong giỏ hàng
+// truy cập vào nút mua
+let addToCart = document.querySelectorAll(".cart")
+// console.log(addToCart);
+// lặp qua các nút
+addToCart.forEach((item)=>{
+// tạo sự kiệN click vào nút 
+item.addEventListener("click",()=>{
+  // alert("123")
+addToCartClicked(item);
+cartModalOverlay.style.transform = "translateX(0)";
+})
+});
+let addToCartClicked = (buttonAdd) =>{
+let parentButtonAdd = buttonAdd.parentElement;
+let parentImageAdd = parentButtonAdd.parentElement;
+
+let price = parentButtonAdd.querySelector(".price").innerHTML;
+let image = parentImageAdd.querySelector(".image").src;
+console.log(image);
+
+//  thêm image, price lên popup giỏ hàng
+addItemToCart(price,image)
+};
+let productRows = document.querySelector(".product-rows")
+let addItemToCart = (price, image)=>{
+  // console.log("Price in addItemToCart:", price);
+  // console.log("Image path in addItemToCart:", image);
+  let HTML = `
+  <img class="cart-image" src=${image} alt="">
+  <span class="cart-price">${price}</span>
+  <input class="product-quantity" type="number" value="1">
+  <button class="remove-btn">Xoá</button>
+  `
+
+// tạo ra row chứa thẻ HTML
+let productRow = document.createElement("div");
+productRow.classList.add("product-row");
+// THÊM NỘI DUNG
+productRow.innerHTML = HTML;
+  // Truy cap phan tu lay ra tat cac hinh anh co san truoc day
+  let cartImage = document.querySelectorAll(".cart-image");
+
+  let issAdd = false;
+  cartImage.forEach((img)=>{
+    if(img.src == image) {
+      alert("San pham da ton tai.");
+      issAdd = true;
+    }
+  });
+
+  if(issAdd) {
+    return null;
+  }
+// Hien thi ra giao dien popup
+productRows.append(productRow);
+  // Xoa 1 item trong popup cart
+  let removeBtn = document.querySelectorAll(".remove-btn");
+  // console.log(removeBtn);
+  removeBtn.forEach((value)=>{
+    // value chinh nut button xoa
+    value.addEventListener("click",()=>{
+      removeCart(value);
+    });
+  });
+
+};
+// Xoa cac san pham da them
+let removeCart = (btnRemove) => {
+  let productRemove =  btnRemove.parentElement;
+  productRemove.remove();
+  // console.log(productRemove);
+  updatePrice();
+}
+let updatePrice = ()=>{
+  
+  let countProduct = document.querySelectorAll(".product-row");
+  console.log(countProduct);
+}
