@@ -8,7 +8,8 @@ box-sizing: border-box;}
   --text-color2: #F172A1;
 }
 
-
+a {text-decoration: none;
+color: black;}
 
 /*  giỏ hàng */
 .cart-modal-overlay {
@@ -253,6 +254,9 @@ box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Đường viền mờ */
 margin-top: 10px;
 display: flex;
 position: relative;}
+.content2 .price {color: var(--text-color2);
+font-weight: bold;
+font-style:italic ;}
 .cart {position: absolute;
 right: 10px;
 top: 5px;

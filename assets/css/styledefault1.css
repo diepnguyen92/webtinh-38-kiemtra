@@ -5,7 +5,8 @@ box-sizing: border-box;}
     --text-color: #FCFCFC;
     --text-color2: #E64398;
   }
-
+a {text-decoration: none;
+color: black;}
 /* top main */
 .top-hearder {width: 100%;
     background-color: #fff;

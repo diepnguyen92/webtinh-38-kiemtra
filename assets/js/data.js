@@ -2,14 +2,14 @@ const data = [
   {
     id : 1,
     name : "Vì Tinh Tú",
-    price: 750000,
+    price: "750,000",
     image:"https://img.mayflower.vn/2024/02/750k-shimmer-kemdau-thuy-chau-1-247x296.jpg",
     title: "Hoa tuoi"
   },
   {
     id : 2,
     name : "Mặt trời mộng mơ",
-    price: 900000,
+    price: "850,000",
     image:"https://img.mayflower.vn/2024/02/900k-cmd-maoluong-phang-mustang-2-5-1-247x296.jpg",
     title: "Hoa tuoi",
     category : "hot"
@@ -17,7 +17,7 @@ const data = [
   {
     id : 3,
     name : "Má em ửng hồng",
-    price: 1200000,
+    price: "1,050,000",
     image:"https://img.mayflower.vn/2023/07/z4502838348593_eaea5990495885316972623f11ce3363-247x296.jpg",
     title: "Hoa tuoi",
     category : "hot"
@@ -25,14 +25,14 @@ const data = [
   {
     id : 4,
     name : "Tia nắng lung linh",
-    price: 1000000,
+    price: "1,150,000",
     image:"https://img.mayflower.vn/2023/12/1100k-capu-maoluong-247x296.jpg",
     title: "Hoa tuoi",
     category : "hot"
   },  {
     id : 5,
     name : "Mặt trời chói trang",
-    price: 800000,
+    price: "650,000",
     image:"https://img.mayflower.vn/2023/11/2000k-cucmaudontulip-2-247x296.jpg",
     title: "Hoa tuoi",
     category : "hot"
@@ -40,7 +40,7 @@ const data = [
    {
     id : 6,
     name : "Hương Gió Bay",
-    price: 1000000,
+    price: "1,350,000",
     image:"https://img.mayflower.vn/2024/02/1000k-tulip-phiyen-phang-tuongxoan-4-247x296.jpg",
     title: "Hoa tuoi",
     category : "new"
@@ -48,7 +48,7 @@ const data = [
   {
     id : 7,
     name : "Kết Nối Yêu Thương",
-    price: 1500000,
+    price: "550,000",
     image:"https://img.mayflower.vn/2023/11/2100k-cam-CM-lan-ho-diep-tulip-ngoc-trai-2-247x296.jpg",
     title: "Hoa tuoi",
     category : "new"
@@ -56,7 +56,7 @@ const data = [
   {
     id : 7,
     name : "Đừng quên tên anh",
-    price: 850000,
+    price: "1,650,000",
     image:"https://img.mayflower.vn/2018/10/dung-quen-ten-anh-1-2-247x296.jpg",
     title: "Hoa tuoi",
     category : "new",
@@ -64,7 +64,7 @@ const data = [
   {
     id : 8,
     name : "Ngôi Sao cô đơn",
-    price: 850000,
+    price: "1,250,000",
     image:"https://img.mayflower.vn/2022/08/ngoi-sao-co-don-247x296.jpg",
     title: "Hoa tuoi",
     category : "new",
@@ -72,7 +72,7 @@ const data = [
   {
     id : 9,
     name : "Cột dây tơ duyên",
-    price: 650000,
+    price: "1,350,000",
     image:"https://img.mayflower.vn/2022/09/cot-day-to-duyen-247x296.jpg",
     title: "Hoa tuoi",
   },
@@ -337,13 +337,13 @@ return item.category ===value
     let HTML = ``
     listData.forEach((item) => {
       HTML +=` <div class="col-12 col-sm-6 col-md-3">
-      <a href="">
+      <a href="/defaut1.html?id=${item.id}" target="_blank">
       <div class="content">
       <img class="image" src="${item.image}" alt="${item.name}">
       <div class="content2">
       <div class="name-price">
        <div class="name">${item.name}</div>
-       <div class="price">${item.price}</div>
+       <div class="price">${item.price} VND</div>
       </div>
       <button class="cart"><i class="fa-solid fa-cart-plus"></i> Mua ngay</button>
       </div></div></a></div>`
