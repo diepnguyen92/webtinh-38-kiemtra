@@ -337,6 +337,7 @@ return item.category ===value
     let HTML = ``
     listData.forEach((item) => {
       HTML +=` <div class="col-12 col-sm-6 col-md-3">
+      <a href="">
       <div class="content">
       <img class="image" src="${item.image}" alt="${item.name}">
       <div class="content2">
@@ -345,7 +346,7 @@ return item.category ===value
        <div class="price">${item.price}</div>
       </div>
       <button class="cart"><i class="fa-solid fa-cart-plus"></i> Mua ngay</button>
-      </div></div></div>`
+      </div></div></a></div>`
     });
     return HTML;
   
