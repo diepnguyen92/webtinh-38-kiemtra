@@ -690,6 +690,32 @@ listingProduct(btnListing, tabContent);
 let mesenger = document.querySelector(".mesenger")
 let msMain = document.querySelector(".mesenger-main")
 let closeButton = document.querySelector(".close-ms")
+
+
+// function khai bao du lieu local storage
+const saveCartToLocalStorage = (cartItem)=>{
+  localStorage.setItem("cartItem",JSON.stringify(cartItem));
+};
+// saveCartToLocalStorage();
+
+// khai bao function get dữ liệu từ local storage
+const getCartFromLocalStorage = ()=>{
+  // dat bien gia su
+  const cartItem = localStorage.getItem("cartItem")
+  // console.log(cartItem);
+//  dung toan tu 3 ngoi
+  return cartItem ? JSON.parse(cartItem) : [];
+};
+// console.log(getCartFromLocalStorage())
+
+// tao bien lay du lieu cart Locastorage
+let cartItem = getCartFromLocalStorage();
+// console.log(cartItem);
+
+
+
+
+
 // console.log(closeButton);
 // console.log(mesenger);
 mesenger.addEventListener('click', ()=>{
@@ -749,30 +775,57 @@ let parentImageAdd = parentButtonAdd.parentElement;
  let price = parentButtonAdd.querySelector(".price").innerHTML;
 let image = parentImageAdd.querySelector(".image").src;
 let name = parentButtonAdd.querySelector(".name").innerHTML;
+
+//khởi tạo giá trị người dùng thêm sản phẩm, push object và save lại 
+let isDuplicate = false;
+cartItem.forEach((value)=>{
+  // console.log(value);
+  if (value.price === price && value.image === image ){
+    alert("sản phẩm đã tồn tại");
+    isDuplicate = true;
+  }});
+if (isDuplicate==false) {
+  cartItem.push({
+    name: name,
+    image: image,
+    price: price,
+    quantity: 1
+  });
+}  
+
+// console.log(cartItem, "cartItem");
+//  hiển thị ra ngoài giao diện
+saveCartToLocalStorage(cartItem)
+
+
+
 // console.log(name);
 //  thêm image, price, name lên popup giỏ hàng
-addItemToCart(price,image,name)
+addItemToCart(cartItem)
 };
-let productRows = document.querySelector(".product-rows")
+
 // thêm sản phẩm vào trong giỏ hàng
-const addItemToCart = (price, image, name)=>{
-  // console.log("Price in addItemToCart:", price);
-  // console.log("Image path in addItemToCart:", image);
+const addItemToCart = (cartItem)=>{
+  const productRows = document.querySelector(".product-rows")
+  productRows.innerHTML=``;
+if(cartItem.length >0){
+cartItem.forEach((item)=>{
+  // console.log(item);
   let HTML = `
   
-      <img class="cart-image" src="${image}" alt="hoa bo">
+      <img class="cart-image" src="${item.image}" alt="hoa bo">
 
 <div class="cart-main-name">
   <div class="cart-name">
-      <div class="cart-name-title">${name}</div>
+      <div class="cart-name-title">${item.name}</div>
       <button class="remove-btn">Xoá</button>
 </div>
       <div class="cart-price-quality">
-      <input class="product-quantity" type="number" value="1" min="1">
-      <span class="cart-price">${price}</span></div>
+      <input class="product-quantity" type="number" value="1" min="0">
+      <span class="cart-price">${item.price}</span></div>
     </div>
    
-  `
+  `;
 
 // tạo ra row chứa thẻ HTML
 let productRow = document.createElement("div");
@@ -780,32 +833,52 @@ let productRow = document.createElement("div");
 productRow.classList.add("cart-image-name");
 // THÊM NỘI DUNG
 productRow.innerHTML = HTML;
+// Hien thi ra giao dien popup
+productRows.append(productRow);
+});
+
+  
+}
+
+  // console.log("Price in addItemToCart:", price);
+  // console.log("Image path in addItemToCart:", image);
+
 
   // Truy cap phan tu lay ra tat cac hinh anh co san truoc day
   let cartImage = document.querySelectorAll(".cart-image");
 
-  let issAdd = false;
-  cartImage.forEach((img)=>{
-    if(img.src == image) {
-      alert("San pham da ton tai.");
-      issAdd = true;
-    }
-  });
+  // let issAdd = false;
+  // cartImage.forEach((img)=>{
+  //   if(img.src == image) {
+  //     alert("San pham da ton tai.");
+  //     issAdd = true;
+  //   }
+  // });
 
-  if(issAdd) {
-    return null;
-  }
-// Hien thi ra giao dien popup
-productRows.append(productRow);
+  // if(issAdd) {
+  //   return null;
+  // }
+
 
   // Xoa 1 item trong popup cart
- 
+
   let removeBtn = document.querySelectorAll(".remove-btn");
+
+
   // console.log(removeBtn);
   removeBtn.forEach((value)=>{
+    // console.log(value);
+let imageSrc =value.closest('.cart-image-name').querySelector(".cart-image").src;
+// console.log(imageSrc);
+  
     // value chinh nut button xoa
     value.addEventListener("click",()=>{
       removeCart(value);
+// update local storage trong nay
+cartItem =cartItem.filter((item)=> item.image !== imageSrc);
+// console.log(cartItem);
+saveCartToLocalStorage(cartItem);
+
     });
   });
   changeProductValue() // thay đổi ố lượng
@@ -814,7 +887,7 @@ productRows.append(productRow);
 // Xoa cac san pham da them
 const removeCart = (btnRemove) => {
   let productRemove =  btnRemove.closest('.cart-image-name');
-  console.log(productRemove);
+  // console.log(productRemove);
   productRemove.remove();
   // console.log(productRemove);
   updatePrice();
@@ -824,13 +897,19 @@ const removeCart = (btnRemove) => {
 const changeProductValue = ()=>{
   // console.log("thay doi so luong");
   const inputQuantity = document.querySelectorAll(".product-quantity")
-  inputQuantity.forEach((item)=>{
+  inputQuantity.forEach((item, index)=>{
+    // console.log(item);
    item.addEventListener('change',()=>{
-    updatePrice()
+    updatePrice();
+    // cập nhật số lượng
+cartItem[index].quantity = item.value
+// lưu lại vào local storage
+saveCartToLocalStorage(cartItem);
+
    })
   })
  
-}
+};
 
 // up price and count product
 const updatePrice=()=>{
@@ -859,7 +938,13 @@ let bagCount = document.querySelector(".bag-product")
 bagCount.innerHTML=productEle.length;
 document.querySelector('.cart-count').innerHTML = productEle.length;
   });
-  }
+};
+// load lại trang luôn luôn phải kiểm tra dữ liệu
+window.addEventListener('DOMContentLoaded',()=>{
+  const cartItem = getCartFromLocalStorage();
+  addItemToCart(cartItem);
+})
+
 
 
 
