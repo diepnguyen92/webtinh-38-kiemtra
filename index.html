@@ -1,32 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hoa tươi</title>
     <!-- import fontawesome -->
-<link rel="stylesheet" href="./lib/fontawesome/css/fontawesome.css">
-<link rel="stylesheet" href="./lib/fontawesome/css/brands.css">
-<link rel="stylesheet" href="./lib/fontawesome/css/solid.css">
-<!-- import bootrap -->
-<link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
-<!-- import owlcarowsel -->
-<link rel="stylesheet" href="./lib/owlcarousel/assets/owl.carousel.min.css">
-<link rel="stylesheet" href="./lib/owlcarousel/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="./lib/fontawesome/css/fontawesome.css" />
+    <link rel="stylesheet" href="./lib/fontawesome/css/brands.css" />
+    <link rel="stylesheet" href="./lib/fontawesome/css/solid.css" />
+    <!-- import bootrap -->
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css" />
+    <!-- import owlcarowsel -->
+    <link
+      rel="stylesheet"
+      href="./lib/owlcarousel/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./lib/owlcarousel/assets/owl.theme.default.min.css"
+    />
     <!-- import css -->
-    <link rel="stylesheet" href="./assets/css/style.css">
-</head>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
 
-<body>
-  <!-- giỏ hàng -->
-  <div class="cart-modal-overlay">
-    <div class="cart-modal">
-      <div class="cart-wraper">
-        <div class="cart-tittle">Giỏ hàng</div>
-        <div class="cart-count">0</div></div>
-      <i id="close-btn" class="fas fa-times"></i>
-      <h1 class="cart-is-empty">chưa có sản phẩm nào</h1>
-      <!-- <div class="cart-image-name">
+  <body>
+    <!-- giỏ hàng -->
+    <div class="cart-modal-overlay">
+      <div class="cart-modal">
+        <div class="cart-wraper">
+          <div class="cart-tittle">Giỏ hàng</div>
+          <div class="cart-count">0</div>
+        </div>
+        <i id="close-btn" class="fas fa-times"></i>
+        <h1 class="cart-is-empty">chưa có sản phẩm nào</h1>
+        <!-- <div class="cart-image-name">
       
       
        
@@ -38,95 +45,114 @@
       <button class="remove-btn">Xoá</button>
 </div>
       <div class="cart-price-quality">
-      <input class="product-quantity" type="number" value="1" min="1">
+      <input class="product-quantity" type="number" value="1" min="0">
       <span class="cart-price">300.000 VND</span></div>
     </div>
     </div> -->
-      
-    <div class="product-rows"></div>
-    <!--thêm sp ở đây-->
-    <div class="total">
-      <div class="cart-total-price">
-      <div class="cart-total">TỔNG TIỀN</div>
-      <span class="total-price">0 VND</span>
+
+        <div class="product-rows"></div>
+        <!--thêm sp ở đây-->
+        <div class="total">
+          <div class="cart-total-price">
+            <div class="cart-total">TỔNG TIỀN</div>
+            <span class="total-price">0 VND</span>
+          </div>
+          <a href="./pay.html">
+            <button class="purchase-btn">Thanh toán</button></a
+          >
+        </div>
+      </div>
     </div>
-      <button class="purchase-btn">Mua ngay</button>
-    </div>  </div>
-  </div>
 
-<!-- top header main -->
-     <div class="top-hearder">
-    <div class="container">
+    <!-- top header main -->
+    <div class="top-hearder">
+      <div class="container">
         <div class="wrap-hearder">
-            <div class="logo"><img src="./assets/image/logo.png" alt=""></div>
-            <div class="searcher">
-                <input type="text" placeholder="Tìm kiếm sản phẩm...">
-         <i class="fa-solid fa-magnifying-glass"></i>
+          <div class="logo"><a href="./index.html"><img src="./assets/image/logo.png" alt="logo" /></a></div>
+          <div class="searcher">
+            <input type="text" placeholder="Tìm kiếm sản phẩm..." />
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+          <div class="acount-bag">
+            <div class="acount">
+              <a href="##">Đăng Nhập <span>/</span>Đăng ký</a>
             </div>
-            <div class="acount-bag">
-                <div class="acount"><a href="##">Đăng Nhập <span>/</span>Đăng ký</a></div>
-                <div class="bag-main">
-                <div class="bag"><i class="fa-solid fa-cart-shopping"></i> 
-                  
-                </div>
-                <div class="bag-product">0</div></div>
-            </div></div>
+            <div class="bag-main">
+              <div class="bag"><i class="fa-solid fa-cart-shopping"></i></div>
+              <div class="bag-product">0</div>
+            </div>
+          </div>
         </div>
-        <!-- menu desktop-->
-   <div class="menu-main">
-    <div class="container">
-        <div class="menu">
+      </div>
+      <!-- menu desktop-->
+      <div class="menu-main">
+        <div class="container">
+          <div class="menu">
             <ul>
-                <li>Trang chủ</li>
-                <li>Sản phẩm
-                  <div class="menu-2">
+              <li><a href="./index.html">Trang chủ</li></a>
+              <li>
+                Sản phẩm
+                <div class="menu-2">
                   <ul>
-                    <li>Hoa tươi</li>
-                    <li>Hoa sáp</li>
-                    <li>Hoa sinh nhật</li>
-                    <li>Giỏ hoa</li>
-                    <li>Lẵng hoa</li>
-                  </ul></div>
-                </li>
-                <li>Cửa hàng</li>
-                <li>Liên hệ</li>
-                <li>Ý nghĩa hoa</li>
-
-            </ul>
-        </div><hr></div></div></div>
-        <!-- baner slie -->
-<div class="baner-slide">
-    <div class="owl-carousel owl-theme">
-        <div class="item"><img src="./assets/image/baner1.png" alt="baner1"></div>
-        <div class="item"><img src="./assets/image/baner2 .jpg" alt="baner2"></div>
-       </div> </div>
-<!-- Listing product -->
-<div class="listing-product">
-    <div class="container">
-
-      <div class="row">
-        <div class="col-12 col-sm-12 col-md-12">
-          <button class="btn-listing active"> Sản phẩm bán chạy</button>
-          <button class="btn-listing">Sản phẩm mới</button>
+                    <li data-category="Hoa tuoi">Hoa tươi</li>
+                    <li data-category="Hoa Sap">Hoa sáp</li>
+                    <li data-category="Hoa bo">Hoa Bó</li>
+                    <li data-category="Hoa Gio">Giỏ hoa</li>
+                    <li data-category="Lang hoa">Lẵng hoa</li>
+                  </ul>
                 </div>
+              </li>
+              <li>Cửa hàng</li>
+              <li>Liên hệ</li>
+              <li>Ý nghĩa hoa</li>
+            </ul>
+          </div>
+          <hr />
+        </div>
       </div>
-
-      <div class="tab-content tab-1 active">
-        <div class="row row-js-hot">
-          <div class="col-12 col-sm-6 col-md-3">
-            <div class="content">
-             <img src="https://img.mayflower.vn/2024/02/750k-shimmer-kemdau-thuy-chau-1-247x296.jpg" alt="ảnh 2">
-             <div class="content2">
-             <div class="name-price">
-              <div class="name">Nhẹ nhàng</div>
-              <div class="price">350.000đ</div>
-             </div>
-            <button class="cart"><i class="fa-solid fa-cart-plus"></i> Mua ngay</button>
-          
-            </div>
+    </div>
+    <div id="categoryContent">
+      <!-- baner slie -->
+      <div class="baner-slide">
+        <div class="owl-carousel owl-theme">
+          <div class="item">
+            <img src="./assets/image/baner1.png" alt="baner1" />
+          </div>
+          <div class="item">
+            <img src="./assets/image/baner2 .jpg" alt="baner2" />
+          </div>
+        </div>
+      </div>
+      <!-- Listing product -->
+      <div class="listing-product">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-sm-12 col-md-12">
+              <button class="btn-listing active">Sản phẩm bán chạy</button>
+              <button class="btn-listing">Sản phẩm mới</button>
             </div>
           </div>
-          <!-- <div class="col-12 col-sm-6 col-md-3">
+
+          <div class="tab-content tab-1 active">
+            <div class="row row-js-hot">
+              <div class="col-12 col-sm-6 col-md-3">
+                <div class="content">
+                  <img
+                    src="https://img.mayflower.vn/2024/02/750k-shimmer-kemdau-thuy-chau-1-247x296.jpg"
+                    alt="ảnh 2"
+                  />
+                  <div class="content2">
+                    <div class="name-price">
+                      <div class="name">Nhẹ nhàng</div>
+                      <div class="price">350.000đ</div>
+                    </div>
+                    <button class="cart">
+                      <i class="fa-solid fa-cart-plus"></i> Mua ngay
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- <div class="col-12 col-sm-6 col-md-3">
             <div class="content"></div>
           </div>
           <div class="col-12 col-sm-6 col-md-3">
@@ -135,12 +161,12 @@
           <div class="col-12 col-sm-6 col-md-3">
             <div class="content"></div>
           </div> -->
-        </div>
-      </div>
+            </div>
+          </div>
 
-      <div class="tab-content tab-2">
-        <div class="row row-js-new">
-          <!-- <div class="col-12 col-sm-6 col-md-3">
+          <div class="tab-content tab-2">
+            <div class="row row-js-new">
+              <!-- <div class="col-12 col-sm-6 col-md-3">
             <div class="content"></div>
           </div>
           <div class="col-12 col-sm-6 col-md-3">
@@ -152,16 +178,18 @@
           <div class="col-12 col-sm-6 col-md-3">
             <div class="content"></div>
           </div> -->
+            </div>
+          </div>
         </div>
-      </div></div></div>
-    <!-- product 1 -->
+      </div>
+      <!-- product 1 -->
       <div class="title-product">
         <h3>Hoa tươi</h3>
       </div>
       <div class="product-sp">
-            <div class="container">
-                <div class="row row-js-ht">
-                    <!-- <div class="col-12 col-sm-6 col-md-3">
+        <div class="container">
+          <div class="row row-js-ht">
+            <!-- <div class="col-12 col-sm-6 col-md-3">
                       <div class="content"></div>
                     </div>
                     <div class="col-12 col-sm-6 col-md-3">
@@ -173,17 +201,17 @@
                     <div class="col-12 col-sm-6 col-md-3">
                       <div class="content"></div>
                     </div> -->
-                  </div>
-         </div>
+          </div>
         </div>
-          <!-- product 2 -->
+      </div>
+      <!-- product 2 -->
       <div class="title-product">
         <h3>Hoa Sáp</h3>
       </div>
       <div class="product-sp">
-            <div class="container">
-                <div class="row row-js-hs">
-                    <!-- <div class="col-12 col-sm-6 col-md-3">
+        <div class="container">
+          <div class="row row-js-hs">
+            <!-- <div class="col-12 col-sm-6 col-md-3">
                       <div class="content"></div>
                     </div>
                     <div class="col-12 col-sm-6 col-md-3">
@@ -196,17 +224,17 @@
                       <div class="content"></div>
                     </div>
                   </div> -->
-         </div>
+          </div>
         </div>
       </div>
-           <!-- product 3-->
-        <div class="title-product">
-          <h3>Hoa Sinh nhật</h3>
-        </div>
-        <div class="product-sp">
-              <div class="container">
-                  <div class="row row-js-hsn">
-                      <!-- <div class="col-12 col-sm-6 col-md-3">
+      <!-- product 3-->
+      <div class="title-product">
+        <h3>Hoa Sinh nhật</h3>
+      </div>
+      <div class="product-sp">
+        <div class="container">
+          <div class="row row-js-hsn">
+            <!-- <div class="col-12 col-sm-6 col-md-3">
                         <div class="content"></div>
                       </div>
                       <div class="col-12 col-sm-6 col-md-3">
@@ -218,120 +246,166 @@
                       <div class="col-12 col-sm-6 col-md-3">
                         <div class="content"></div>
                       </div> -->
-                    </div>
-           </div>
           </div>
-           <!-- product 4-->
-           <div class="title-product">
-            <h3>Hoa Bó</h3>
-          </div>
-          <div class="product-sp">
-                <div class="container">
-                    <div class="row row-js-hb">
-                        <!-- <div class="col-12 col-sm-6 col-md-3">
-                          <div class="content"></div>
-                        </div>
-                        <div class="col-12 col-sm-6 col-md-3">
-                          <div class="content"></div>
-                        </div>
-                        <div class="col-12 col-sm-6 col-md-3">
-                          <div class="content"></div>
-                        </div>
-                        <div class="col-12 col-sm-6 col-md-3">
-                          <div class="content"> -->
-              
-                          </div>
-                        </div> 
-                      </div>
-                 <!-- product 5-->
-           <div class="title-product">
-            <h3>Lẵng Hoa</h3>
-          </div>
-          <div class="product-sp">
-                <div class="container">
-                    <div class="row row-js-hl">
-                        <!-- <div class="col-12 col-sm-6 col-md-3">
-                          <div class="content"></div>
-                        </div>
-                        <div class="col-12 col-sm-6 col-md-3">
-                          <div class="content"></div>
-                        </div>
-                        <div class="col-12 col-sm-6 col-md-3">
-                          <div class="content"></div>
-                        </div>
-                        <div class="col-12 col-sm-6 col-md-3">
-                          <div class="content"> -->
-              
-                          </div>
-                        </div> 
-                      </div>
-             
-           
-        <!-- botton-footter -->
-      <div class="bottom-footer">
+        </div>
+      </div>
+      <!-- product 4-->
+      <div class="title-product">
+        <h3>Hoa Bó</h3>
+      </div>
+      <div class="product-sp">
         <div class="container">
-          <div class="row row-js">
-            <div class="col-12 col-sm-6 col-md-3">
-              <div class="content"> Về chúng tôi
-              <ul>
-                <li>Giới Thiệu</li>
-                <li>chính sách bảo mật</li>
-                <li>Quy chế hoạt động</li>
-              </ul>
-            </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-3">
-              <div class="content">Dịch vụ khách hàng
-                <li>Giới Thiệu</li>
-                <li>chính sách bảo mật</li>
-                <li>Quy chế hoạt động</li>
-              </ul>
-           </div>
-              <ul>
-            </div>
-            <div class="col-12 col-sm-6 col-md-3">
-              <div class="content">Tin tức
-                <ul>
-                  <li>Giới thiệu về hoa</li>
-                  <li>Cẩm nang</li>
-                  <li>Khuyến mãi</li>
-                </ul>
-              </div>
+          <div class="row row-js-hb">
+            <!-- <div class="col-12 col-sm-6 col-md-3">
+                          <div class="content"></div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-3">
+                          <div class="content"></div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-3">
+                          <div class="content"></div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-3">
+                          <div class="content"> -->
+          </div>
+        </div>
+      </div>
+      <!-- product 5-->
+      <div class="title-product">
+        <h3>Lẵng Hoa</h3>
+      </div>
+      <div class="product-sp">
+        <div class="container">
+          <div class="row row-js-hl">
+            <!-- <div class="col-12 col-sm-6 col-md-3">
+                          <div class="content"></div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-3">
+                          <div class="content"></div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-3">
+                          <div class="content"></div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-3">
+                          <div class="content"> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- thêm sản phẩm sau khi reset trang tại đây -->
+    <div class="product-sp-menu">
+      <div class="container">
+        <div class="row row-js-menu">
+          <!-- <div class="col-12 col-sm-6 col-md-3">
+      <div class="content"></div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-3">
+      <div class="content"></div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-3">
+      <div class="content"></div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-3">
+      <div class="content"> -->
+        </div>
+      </div>
+    </div>
+    <!-- ƯU ĐIỂM NỔI BẬT -->
+    <div class="advantage">
+      <div class="container">
+        <div class="advantage-main">8 Ưu điểm nổi bật của MoonFlower</div>
+        <div class="image-avantage">
+          <img src="./assets/image/ưu điểm.jpg" alt="ưu điểm" />
+        </div>
+      </div>
+    </div>
 
+    <!-- botton-footter -->
+    <div class="bottom-footer">
+      <div class="container">
+        <div class="row row-js">
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="content">
+              Về chúng tôi
+              <ul>
+                <li>Giới Thiệu</li>
+                <li>chính sách bảo mật</li>
+                <li>Quy chế hoạt động</li>
+              </ul>
             </div>
-            <div class="col-12 col-sm-6 col-md-3">
-              <div class="content"> Liên hệ
-                <ul>
-                  <li>Địa chỉ : số 03, Đường Hùng Vương, TP.Việt Trì, Tỉnh Phú Thọ</li>
-                  <li>Email : <a href="#">nguyendiep.kttm@gmail.com</a></li>
-                </ul>
-              </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="content">
+              Dịch vụ khách hàng.
+              <ul>
+                <li>Giới Thiệu</li>
+                <li>chính sách bảo mật</li>
+                <li>Quy chế hoạt động</li>
+                <li>
+                  Kết nối:
+                  <i class="fa-brands fa-facebook" style="color: #74c0fc"></i>
+                  <i class="fa-brands fa-tiktok"></i>
+                </li>
+                <li>Email : <a href="#">nguyendiep.kttm@gmail.com</a></li>
+              </ul>
             </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="content">
+              Tin tức.
+              <ul>
+                <li>Giới thiệu về hoa</li>
+                <li>Cẩm nang</li>
+                <li>Khuyến mãi</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="content">
+              Liên hệ.
+              <ul>
+                <li>
+                  Địa chỉ : số 03, Đường Hùng Vương, TP.Việt Trì, Tỉnh Phú Thọ.
+                </li>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3716.1378226493002!2d105.35816947600432!3d21.345058276838436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3134926400000001%3A0x91429d8f91c4915d!2zSG9uZGEgw5QgVMO0IFZp4buHdCBUcsOs!5e0!3m2!1svi!2s!4v1710425514278!5m2!1svi!2s"
+                  width="100%"
+                  height="112"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
       <div class="footer-main">
         <div class="container">
-<div class="copy">Copyright ©2024 shop hoa tươi </div>
-<div class="copy">Design By Diepnguyen </div>
-        </div>
-        
-      </div></div>
-      <div class="mesenger"> chat
-        <div class="mesenger-main">
-          <button class="close-ms"><i class="fa-solid fa-xmark"></i></button><br>
-          <input type="text" placeholder="nhập nội dung">
+          <div class="copy">Copyright ©2024 shop hoa tươi</div>
+          <div class="copy">Design By Diepnguyen</div>
         </div>
       </div>
-<a href="" target="_blank"></a>
+    </div>
+    <div class="mesenger">
+      chat
+      <div class="mesenger-main">
+        <button class="close-ms"><i class="fa-solid fa-xmark"></i></button
+        ><br />
+        <input type="text" placeholder="nhập nội dung" />
+      </div>
+    </div>
+    <a href="" target="_blank"></a>
 
     <!-- import bootrap -->
-   <script src="./lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-   <!-- import jquery -->
-   <script src="./lib/jquery-3.7.1.min.js"></script>
-   <!-- import owcarousel -->
-   <script src="./lib/owlcarousel/owl.carousel.min.js"></script>
-   <script src="./assets/js/custom.js"></script>
-<!-- import js -->
-<script src="./assets/js/data.js"></script>
-</body>
+    <script src="./lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- import jquery -->
+    <script src="./lib/jquery-3.7.1.min.js"></script>
+    <!-- import owcarousel -->
+    <script src="./lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="./assets/js/custom.js"></script>
+    <!-- import js -->
+    <script src="./assets/js/data.js"></script>
+  </body>
 </html>

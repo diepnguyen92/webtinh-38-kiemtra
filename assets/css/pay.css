@@ -126,6 +126,7 @@ padding: 20px 20px;
 border-radius: 10px;
 box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);}
 form input {
+    padding-left: 7px;
     margin-bottom: 10px;
     width: 100%;
     height: 50px;
@@ -172,4 +173,58 @@ height: 30px;
 font-size: 20px;
 display: flex;
 align-items: center;}
-.content-link .link-cart, .link-payment, .link-suss {width: calc(100%/3);}
+.content-link .link-cart, .link-payment {font-weight: bold;}
+.cart-image-name {display: flex;
+   align-items: center;
+    margin-bottom: 5px;
+border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+margin-bottom: 10px;
+padding-bottom: 3px;}
+.cart-image-name img {object-fit: cover;
+width: 50px;
+height: 50px;}
+
+.cart-name-title {
+margin: 0 8px;
+font-size: 14px;
+width: 50%;
+
+height: 50px;
+display: flex;
+align-items: center;
+}
+.cart-price-quality {font-size: 14px;
+
+height: 50px;
+width: 35%;
+display: flex;
+align-items: center;
+}
+.cart-image-count {position: relative;
+width: 15%;
+height: 50px;
+}
+.cart-count {width: 20px;
+height: 20px;
+background-color: #F172A1;
+color: white;
+position: absolute;
+top: -10px;
+right: -5px;
+z-index: 9999;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 50%;
+}
+.cart-total {display: flex;
+align-items: center;
+width: 100%;
+justify-content: space-between;
+font-weight: bold;
+border-top: 1px solid rgba(0, 0, 0, 0.1);
+margin-top: 10px;
+};
+.cart-total-tt {color: #F172A1;}
+a {text-decoration: none;
+color: black;}

@@ -117,7 +117,7 @@ const data = [
   
     },
     {
-      id : 7,
+      id : 47,
       name : "Đừng quên tên anh",
       price: "1.650.000",
       image:"https://img.mayflower.vn/2018/10/dung-quen-ten-anh-1-2-247x296.jpg",
