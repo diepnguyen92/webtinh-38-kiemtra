@@ -452,7 +452,7 @@ const data = [
     name: "Âm Hưởng Nhẹ Nhàng",
     price: "800,000",
     image:
-      "https://img.mayflower.vn/2023/12/850k-lac-than-mix-ton-hong-trang-510x510.jpg",
+      "https://img.mayflower.vn/2022/07/nhe-tua-long-hong1-247x296.jpg",
     title: "Lang hoa",
     coment:
       "Bó Hoa Hồng Sáp- tình yêu bất tử, mong muốn gắn bó lâu dài, bền chặt. Bó theo phong cách hiện đại, sang trọng, tinh tế, kiêu hãnh.",
@@ -467,7 +467,7 @@ const data = [
     name: "Tinh Tế",
     price: "350,000",
     image:
-      "https://img.mayflower.vn/2023/12/850k-lac-than-mix-ton-hong-trang-510x510.jpg",
+      "https://img.mayflower.vn/2022/07/mua-thu-ha-noi-247x296.jpg",
     title: "Lang hoa",
     coment:
       "Bó Hoa Hồng Sáp- tình yêu bất tử, mong muốn gắn bó lâu dài, bền chặt. Bó theo phong cách hiện đại, sang trọng, tinh tế, kiêu hãnh.",
@@ -809,7 +809,8 @@ const renderData = (listData) => {
               <div class="name">${item.name}</div>
               <div class="price">${item.price} VND</div>
             </div>
-            <button class="cart"><i class="fa-solid fa-cart-plus"></i> Mua ngay</button>
+            <button class="cart">
+            <i class="fa-solid fa-cart-plus"></i> Mua ngay</button>
           </div>
         </div>
       </div>
