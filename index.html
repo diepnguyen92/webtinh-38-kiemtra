@@ -21,6 +21,7 @@
     />
     <!-- import css -->
     <link rel="stylesheet" href="./assets/css/style.css" />
+  <!-- import responsive -->
   </head>
 
   <body>
@@ -70,12 +71,12 @@
         <div class="wrap-hearder">
           <div class="logo"><a href="./index.html"><img src="./assets/image/logo.png" alt="logo" /></a></div>
           <div class="searcher">
-            <input type="text" placeholder="Tìm kiếm sản phẩm..." />
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="searcherInput" placeholder="Tìm kiếm sản phẩm..." oninput="searcherProduct()" />
+           <i class="fa-solid fa-magnifying-glass"></i>
           </div>
           <div class="acount-bag">
             <div class="acount">
-              <a href="##">Đăng Nhập <span>/</span>Đăng ký</a>
+              <i class="fa-solid fa-user"></i>
             </div>
             <div class="bag-main">
               <div class="bag"><i class="fa-solid fa-cart-shopping"></i></div>
@@ -87,10 +88,16 @@
       <!-- menu desktop-->
       <div class="menu-main">
         <div class="container">
-          <div class="menu">
+           <!-- mobile-menu -->
+           <div>
+        <div class="container1" onclick="myFunction(this)">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div></div>
+          <div class="menu" >
             <ul>
               <li><a href="./index.html">Trang chủ</li></a>
-              <li>
+              <li class="menu-main">
                 Sản phẩm
                 <div class="menu-2">
                   <ul>
@@ -107,14 +114,33 @@
               <li>Ý nghĩa hoa</li>
             </ul>
           </div>
+        </div>
           <hr />
+       
+      
+      <div class="mobile-top-hearder">
+        <div class="container">
+         
+          <div class="mobile-logo">
+            <a href="./index.html">
+            <img src="./assets/image/logo.png" alt="logo"></a>
+          </div>
+          <div class="acount-bag">
+            <div class="bag-main">
+              <div class="bag"><i class="fa-solid fa-cart-shopping"></i></div>
+              <div class="bag-product">0</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+    </div>
+  </div>
     <div id="categoryContent">
       <!-- baner slie -->
       <div class="baner-slide">
-        <div class="owl-carousel owl-theme">
+        
+        <div class="owl-carousel" id="carousel1">
           <div class="item">
             <img src="./assets/image/baner1.png" alt="baner1" />
           </div>
@@ -122,6 +148,7 @@
             <img src="./assets/image/baner2 .jpg" alt="baner2" />
           </div>
         </div>
+      
       </div>
       <!-- Listing product -->
       <div class="listing-product">
@@ -134,38 +161,13 @@
           </div>
 
           <div class="tab-content tab-1 active">
-            <div class="row row-js-hot">
-              <div class="col-12 col-sm-6 col-md-3">
-                <div class="content">
-                  <img
-                    src="https://img.mayflower.vn/2024/02/750k-shimmer-kemdau-thuy-chau-1-247x296.jpg"
-                    alt="ảnh 2"
-                  />
-                  <div class="content2">
-                    <div class="name-price">
-                      <div class="name">Nhẹ nhàng</div>
-                      <div class="price">350.000đ</div>
-                    </div>
-                    <button class="cart">
-                      <i class="fa-solid fa-cart-plus"></i> Mua ngay
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <!-- <div class="col-12 col-sm-6 col-md-3">
-            <div class="content"></div>
-          </div>
-          <div class="col-12 col-sm-6 col-md-3">
-            <div class="content"></div>
-          </div>
-          <div class="col-12 col-sm-6 col-md-3">
-            <div class="content"></div>
-          </div> -->
+            <div  id="carousel2" class="owl-carousel row row-js-hot" >
             </div>
           </div>
 
           <div class="tab-content tab-2">
-            <div class="row row-js-new">
+            <div id="carousel3" class="owl-carousel row row-js-new">
+              
               <!-- <div class="col-12 col-sm-6 col-md-3">
             <div class="content"></div>
           </div>
@@ -319,7 +321,7 @@
         </div>
       </div>
     </div>
-
+  
     <!-- botton-footter -->
     <div class="bottom-footer">
       <div class="container">
@@ -396,8 +398,13 @@
         <input type="text" placeholder="nhập nội dung" />
       </div>
     </div>
-    <a href="" target="_blank"></a>
-
+    
+    <!-- import mobile menu -->
+    <script>
+      function myFunction(x) {
+        x.classList.toggle("change");
+      }
+      </script>
     <!-- import bootrap -->
     <script src="./lib/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- import jquery -->

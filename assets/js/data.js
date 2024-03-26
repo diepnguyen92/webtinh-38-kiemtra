@@ -825,8 +825,34 @@ rowjsHsn.innerHTML = renderData(listDataHsn);
 rowJsHkt.innerHTML = renderData(listDataHkt);
 rowJsHl.innerHTML = renderData(listDataHl);
 
-rowHot.innerHTML = renderData(listDataHot);
-rowNew.innerHTML = renderData(listDataNew);
+const renderDataHot = (listData) => {
+  let HTMLH = ``;
+  listData.forEach((item) => {
+    HTMLH += `
+      <div>
+        <div class="content">
+          <a href="/defaut1.html?id=${item.id}" target="_blank">
+          <img class="image" src="${item.image}" alt="${item.name}"></a>
+          <div class="content2">
+            <div class="name-price">
+              <div class="name">${item.name}</div>
+              <div class="price">${item.price} VND</div>
+            </div>
+            <button class="cart">
+            <i class="fa-solid fa-cart-plus"></i> Mua ngay</button>
+          </div>
+        </div>
+        </div>
+      `;
+  });
+  return HTMLH;
+};
+
+
+
+
+rowHot.innerHTML = renderDataHot(listDataHot);
+rowNew.innerHTML = renderDataHot(listDataNew);
 // truy cập sp bán chạy, new
 let btnListing = document.querySelectorAll(".btn-listing");
 let tabContent = document.querySelectorAll(".tab-content");
@@ -895,15 +921,16 @@ closeButton.addEventListener("click", () => {
 });
 //  giỏ hàng
 // truy cập phần tử
-let cart = document.querySelector(".bag-main");
+let cart = document.querySelectorAll(".bag-main");
 // console.log(cart);
 let cartModalOverlay = document.querySelector(".cart-modal-overlay");
 let closeBtn = document.querySelector("#close-btn");
 // thêm sự kiệN mở giỏ hàng
-cart.addEventListener("click", () => {
+cart.forEach(element =>{
+element.addEventListener("click", () => {
   // alert("123")
   cartModalOverlay.style.transform = "translateX(0)";
-});
+});});
 //  đóng giỏ hàng
 closeBtn.addEventListener("click", () => {
   cartModalOverlay.style.transform = "translateX(-200%)";
@@ -1094,9 +1121,10 @@ const updatePrice = () => {
     total.toLocaleString("en-US") + " VND";
   // thay đổi số lượng trên giỏ hàng
 
-  let bagCount = document.querySelector(".bag-product");
+  let bagCount = document.querySelectorAll(".bag-product");
   // console.log(bagCount);
-  bagCount.innerHTML = cartItem.length;
+  bagCount.forEach(item=>{
+  item.innerHTML = cartItem.length;})
   document.querySelector(".cart-count").innerHTML = cartItem.length;
 };
 
@@ -1145,7 +1173,7 @@ function showCategory(category) {
                   <div class="content2">
                       <div class="name-price">
                           <div class="name">${product.name}</div>
-                          <div class="price">${product.price}</div>
+                          <div class="price">${product.price} VND</div>
                       </div>
                       <button id="product_id_${product.id}" class="cart"><i class="fa-solid fa-cart-plus"></i> Mua ngay</button>
                   </div>
@@ -1160,4 +1188,87 @@ function showCategory(category) {
       cartModalOverlay.style.transform = "translateX(0)";
     });
   });
+};
+
+// làm menu
+const menuContainer = document.querySelector(".container1");
+const menu = document.querySelector(".menu");
+const menuMain = document.querySelector(".menu-main");
+const menu2 = document.querySelector(".menu-2");
+
+menuContainer.addEventListener('click', () => {
+    menu.classList.toggle('show-menu');
+    menu2.classList.remove('show-menu2'); // Ẩn menu2 khi click vào menuContainer
+});
+
+menuMain.addEventListener('click', (event) => {
+    menu2.classList.toggle('show-menu2');
+    event.stopPropagation();
+});
+
+document.addEventListener('click', (event) => {
+    const clickedOutsideMenuContainer = !menuContainer.contains(event.target);
+    const clickedOutsideMenuMain = !menuMain.contains(event.target);
+    
+    if (clickedOutsideMenuContainer && clickedOutsideMenuMain) {
+        menu.classList.remove('show-menu');
+        menu2.classList.remove('show-menu2');
+    }
+});
+
+// tìm kiếm
+
+
+
+function searcherProduct(){
+  const searcher = document.getElementById('searcherInput').value;
+  // console.log(searcher);
+  const productSearcher = data.filter(value =>{
+    return value.name.toLocaleUpperCase().includes(searcher.toLocaleUpperCase())
+  });
+  showCategory(productSearcher)
+  // console.log(productSearcher);
 }
+
+
+// Hàm hiển thị sản phẩm theo danh mục
+function showCategory(category) {
+    const categoryContent2 = document.getElementById("categoryContent");
+    const productSp2 = document.querySelector(".row-js-menu");
+    
+    // Xóa nội dung cũ trước khi hiển thị mới
+    categoryContent2.innerHTML = "";
+    productSp2.innerHTML = "";
+
+    // Hiển thị các sản phẩm tìm được
+    category.forEach((product) => {
+        const productHTML = `
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="content">
+                    <a href="/defaut1.html?id=${product.id}" target="_blank">
+                        <img class="image" src="${product.image}" alt="${product.name}">
+                    </a>
+                    <div class="content2">
+                        <div class="name-price">
+                            <div class="name">${product.name}</div>
+                            <div class="price">${product.price} VND</div>
+                        </div>
+                        <button id="product_id_${product.id}" class="cart"><i class="fa-solid fa-cart-plus"></i> Mua ngay</button>
+                    </div>
+                </div>
+            </div>
+        `;
+        productSp2.insertAdjacentHTML("beforeend", productHTML);
+
+        const cartButton1 = document.getElementById(`product_id_${product.id}`);
+        console.log(cartButton1);
+        cartButton1.addEventListener("click", () => {
+          addToCartClicked(cartButton1);
+          cartModalOverlay.style.transform = "translateX(0)";
+        });
+
+    });
+
+  
+ 
+};
