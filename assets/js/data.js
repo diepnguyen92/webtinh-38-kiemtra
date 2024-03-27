@@ -802,7 +802,7 @@ const renderData = (listData) => {
     HTML += `
       <div class="col-12 col-sm-6 col-md-3">
         <div class="content">
-          <a href="/defaut1.html?id=${item.id}" target="_blank">
+          <a href="./defaut1.html?id=${item.id}" target="_blank">
           <img class="image" src="${item.image}" alt="${item.name}"></a>
           <div class="content2">
             <div class="name-price">
@@ -831,7 +831,7 @@ const renderDataHot = (listData) => {
     HTMLH += `
       <div>
         <div class="content">
-          <a href="/defaut1.html?id=${item.id}" target="_blank">
+          <a href="./defaut1.html?id=${item.id}" target="_blank">
           <img class="image" src="${item.image}" alt="${item.name}"></a>
           <div class="content2">
             <div class="name-price">
@@ -1168,7 +1168,7 @@ function showCategory(category) {
     const productHTML = `
           <div class="col-12 col-sm-6 col-md-3">
               <div class="content">
-              <a href="/defaut1.html?id=${product.id}" target="_blank">
+              <a href="./defaut1.html?id=${product.id}" target="_blank">
                   <img class="image" src="${product.image}" alt="${product.name}"></a>
                   <div class="content2">
                       <div class="name-price">
@@ -1226,13 +1226,13 @@ function searcherProduct(){
   const productSearcher = data.filter(value =>{
     return value.name.toLocaleUpperCase().includes(searcher.toLocaleUpperCase())
   });
-  showCategory(productSearcher)
+  showProduct(productSearcher)
   // console.log(productSearcher);
 }
 
 
 // Hàm hiển thị sản phẩm theo danh mục
-function showCategory(category) {
+function showProduct(item) {
     const categoryContent2 = document.getElementById("categoryContent");
     const productSp2 = document.querySelector(".row-js-menu");
     
@@ -1241,11 +1241,11 @@ function showCategory(category) {
     productSp2.innerHTML = "";
 
     // Hiển thị các sản phẩm tìm được
-    category.forEach((product) => {
+    item.forEach((product) => {
         const productHTML = `
             <div class="col-12 col-sm-6 col-md-3">
                 <div class="content">
-                    <a href="/defaut1.html?id=${product.id}" target="_blank">
+                    <a href="./defaut1.html?id=${product.id}" target="_blank">
                         <img class="image" src="${product.image}" alt="${product.name}">
                     </a>
                     <div class="content2">
@@ -1261,7 +1261,7 @@ function showCategory(category) {
         productSp2.insertAdjacentHTML("beforeend", productHTML);
 
         const cartButton1 = document.getElementById(`product_id_${product.id}`);
-        console.log(cartButton1);
+        // console.log(cartButton1);
         cartButton1.addEventListener("click", () => {
           addToCartClicked(cartButton1);
           cartModalOverlay.style.transform = "translateX(0)";
