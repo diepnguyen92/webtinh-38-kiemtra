@@ -1146,13 +1146,13 @@ document.addEventListener("DOMContentLoaded", function () {
       // alert('123')
       const category = this.getAttribute("data-category");
       // console.log(category);
-      showCategory(category);
+      showProduct(category);
     });
   });
 });
 
 // Hàm hiển thị sản phẩm theo danh mục
-function showCategory(category) {
+function showProduct(category) {
   const categoryContent = document.getElementById("categoryContent");
   const productSp = document.querySelector(".row-js-menu");
   // console.log(categoryContent);
@@ -1226,13 +1226,13 @@ function searcherProduct(){
   const productSearcher = data.filter(value =>{
     return value.name.toLocaleUpperCase().includes(searcher.toLocaleUpperCase())
   });
-  showProduct(productSearcher)
+  showCategory(productSearcher)
   // console.log(productSearcher);
 }
 
 
 // Hàm hiển thị sản phẩm theo danh mục
-function showProduct(item) {
+function showCategory(category) {
     const categoryContent2 = document.getElementById("categoryContent");
     const productSp2 = document.querySelector(".row-js-menu");
     
@@ -1241,7 +1241,7 @@ function showProduct(item) {
     productSp2.innerHTML = "";
 
     // Hiển thị các sản phẩm tìm được
-    item.forEach((product) => {
+    category.forEach((product) => {
         const productHTML = `
             <div class="col-12 col-sm-6 col-md-3">
                 <div class="content">
@@ -1261,7 +1261,7 @@ function showProduct(item) {
         productSp2.insertAdjacentHTML("beforeend", productHTML);
 
         const cartButton1 = document.getElementById(`product_id_${product.id}`);
-        // console.log(cartButton1);
+        console.log(cartButton1);
         cartButton1.addEventListener("click", () => {
           addToCartClicked(cartButton1);
           cartModalOverlay.style.transform = "translateX(0)";
