@@ -2,5 +2,9 @@
 padding: 0;
 box-sizing: border-box;}
 
+<<<<<<< HEAD
 .content:hover {border: unset;}
 .menu-active {border-bottom:2px solid rgba(0, 0, 0, 0.2)}
+=======
+.content:hover {border: unset;}
+>>>>>>> 0a482571a643d2310dcd8faadba15a4d557e6558

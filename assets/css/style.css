@@ -384,18 +384,26 @@ color: #fff;}
 justify-content: space-between;
 font-size: 20px;}
 .wrap-hearder {margin-bottom: 20px;}
+<<<<<<< HEAD
 .menu ul {display: flex;
 align-items: center;
 }
+=======
+.menu ul {display: flex;}
+>>>>>>> 0a482571a643d2310dcd8faadba15a4d557e6558
 .menu ul li {
 font-size: 20px;
 margin-left: 20px;
 padding-right: 10px;
+<<<<<<< HEAD
 list-style: none;
 border-bottom: 2px solid transparent;}
 .menu ul li:hover {border-bottom: 2px solid rgba(0, 0, 0, .2);
 display: inline block;}
 
+=======
+list-style: none;}
+>>>>>>> 0a482571a643d2310dcd8faadba15a4d557e6558
 .menu-total {background-color: var(--text-color2);
     color: var(--text-color);
     position: sticky;
@@ -478,9 +486,13 @@ font-size: 20px;
 border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
  .bottom-footer .content { width: 100%;
+
 margin-bottom: 30px;
 padding-top: 10px;}
+<<<<<<< HEAD
 .bottom-footer .content:hover {border: none;}
+=======
+>>>>>>> 0a482571a643d2310dcd8faadba15a4d557e6558
 .content img {object-fit: cover;
 width: 100%;
 max-height: 85%;
@@ -691,13 +703,19 @@ color: var(--text-color2);}
     color: #F172A1;
     font-size: 16px;
     border-top: 1px solid rgba(0, 0, 0, 0.1);}
+<<<<<<< HEAD
     /* tạo hiệu ứng cho hotline */
    
+=======
+>>>>>>> 0a482571a643d2310dcd8faadba15a4d557e6558
 
 
 /* responsive */
 @media screen and (max-width: 1200px){
+<<<<<<< HEAD
     .hotline {display: none;}
+=======
+>>>>>>> 0a482571a643d2310dcd8faadba15a4d557e6558
     .advantage {display: none;}
     .advantage {display: none;}
     .content2 {display: unset;
