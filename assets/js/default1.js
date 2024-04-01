@@ -862,7 +862,7 @@ const renderDataDetail = (lisData) =>{
     UML +=` <div class="col-12 col-sm-6 col-md-3">
    
     <div class="content">
-    <a href="/defaut1.html?id=${item.id}" target="_blank">
+    <a href="./defaut1.html?id=${item.id}" target="_blank">
     <img class="image" src="${item.image}" alt="${item.name}"></a>
     <div class="content2">
     <div class="name-price">
@@ -1168,7 +1168,7 @@ function showCategory(category) {
     const productHTML = `
           <div class="col-12 col-sm-6 col-md-3">
               <div class="content">
-              <a href="/defaut1.html?id=${product.id}" target="_blank">
+              <a href="./defaut1.html?id=${product.id}" target="_blank">
                   <img class="image" src="${product.image}" alt="${product.name}"></a>
                   <div class="content2">
                       <div class="name-price">

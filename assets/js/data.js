@@ -1146,13 +1146,13 @@ document.addEventListener("DOMContentLoaded", function () {
       // alert('123')
       const category = this.getAttribute("data-category");
       // console.log(category);
-      showProduct(category);
+      showCategory(category);
     });
   });
 });
 
 // Hàm hiển thị sản phẩm theo danh mục
-function showProduct(category) {
+function showCategory(category) {
   const categoryContent = document.getElementById("categoryContent");
   const productSp = document.querySelector(".row-js-menu");
   // console.log(categoryContent);
@@ -1226,13 +1226,13 @@ function searcherProduct(){
   const productSearcher = data.filter(value =>{
     return value.name.toLocaleUpperCase().includes(searcher.toLocaleUpperCase())
   });
-  showCategory(productSearcher)
+  showProduct(productSearcher)
   // console.log(productSearcher);
 }
 
 
 // Hàm hiển thị sản phẩm theo danh mục
-function showCategory(category) {
+function showProduct(category) {
     const categoryContent2 = document.getElementById("categoryContent");
     const productSp2 = document.querySelector(".row-js-menu");
     
