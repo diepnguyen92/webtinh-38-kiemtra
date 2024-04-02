@@ -384,17 +384,28 @@ color: #fff;}
 justify-content: space-between;
 font-size: 20px;}
 .wrap-hearder {margin-bottom: 20px;}
+
 .menu ul {display: flex;
 align-items: center;
 }
+
+.menu ul {display: flex;
+align-items: center;
+}
+
+.menu ul {display: flex;}
+
 .menu ul li {
 font-size: 20px;
 margin-left: 20px;
 padding-right: 10px;
+
 list-style: none;
 border-bottom: 2px solid transparent;}
 .menu ul li:hover {border-bottom: 2px solid rgba(0, 0, 0, .2);
 display: inline block;}
+
+
 
 .menu-total {background-color: var(--text-color2);
     color: var(--text-color);
@@ -480,7 +491,12 @@ border-top: 1px solid rgba(0, 0, 0, 0.1);
  .bottom-footer .content { width: 100%;
 margin-bottom: 30px;
 padding-top: 10px;}
+
 .bottom-footer .content:hover {border: none;}
+
+
+.bottom-footer .content:hover {border: none;}
+
 .content img {object-fit: cover;
 width: 100%;
 max-height: 85%;
@@ -691,6 +707,7 @@ color: var(--text-color2);}
     color: #F172A1;
     font-size: 16px;
     border-top: 1px solid rgba(0, 0, 0, 0.1);}
+
     /* tạo hiệu ứng cho hotline */
    .listing-product .row {display: flex;}
    .fillter {font-size: 20px;
@@ -702,10 +719,18 @@ color: var(--text-color2);}
     }
 
 
+    /* tạo hiệu ứng cho hotline */
+   
+
+
 
 /* responsive */
 @media screen and (max-width: 1200px){
+
     .hotline {display: none;}
+
+    .hotline {display: none;}
+
     .advantage {display: none;}
     .advantage {display: none;}
     .content2 {display: unset;
