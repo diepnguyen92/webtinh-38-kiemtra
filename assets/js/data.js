@@ -1239,10 +1239,14 @@ function showProduct(category) {
     // Xóa nội dung cũ trước khi hiển thị mới
     categoryContent2.innerHTML = "";
     productSp2.innerHTML = "";
-
+  // Thêm tiêu đề
+  const categoryTitle = document.createElement("h2");
+  categoryTitle.textContent = "Danh sách sản phẩm"; // Thay đổi tiêu đề theo nhu cầu
+ categoryContent2.appendChild(categoryTitle);
     // Hiển thị các sản phẩm tìm được
     category.forEach((product) => {
         const productHTML = `
+
             <div class="col-12 col-sm-6 col-md-3">
                 <div class="content">
                     <a href="./defaut1.html?id=${product.id}" target="_blank">
@@ -1268,7 +1272,14 @@ function showProduct(category) {
         });
 
     });
-
-  
- 
-};
+  };
+// cuộn lên đầu trang
+// truy cập nút
+const backTop = document.getElementById("back-to-top")
+console.log(backTop);
+// sự kiện click
+backTop.addEventListener('click', ()=>{
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'});
+})

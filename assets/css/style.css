@@ -356,10 +356,12 @@ font-size: 20px;
 }
 .acount {
 margin-right: 15px;}
+.acount:hover{cursor: pointer;}
 .acount a {text-decoration: none;
 color: black;}
 .bag-main {
 position: relative;}
+.bag-main:hover {cursor: pointer;}
 .bag {
 z-index: 99999;
 }
@@ -378,13 +380,22 @@ z-index: 10;
 font-size: 15px;
 color: #fff;}
 /* tạo menu */
+.menu {display: flex;
+justify-content: space-between;
+font-size: 20px;}
 .wrap-hearder {margin-bottom: 20px;}
-.menu ul {display: flex;}
+.menu ul {display: flex;
+align-items: center;
+}
 .menu ul li {
 font-size: 20px;
 margin-left: 20px;
 padding-right: 10px;
-list-style: none;}
+list-style: none;
+border-bottom: 2px solid transparent;}
+.menu ul li:hover {border-bottom: 2px solid rgba(0, 0, 0, .2);
+display: inline block;}
+
 .menu-total {background-color: var(--text-color2);
     color: var(--text-color);
     position: sticky;
@@ -467,9 +478,9 @@ font-size: 20px;
 border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
  .bottom-footer .content { width: 100%;
-
 margin-bottom: 30px;
 padding-top: 10px;}
+.bottom-footer .content:hover {border: none;}
 .content img {object-fit: cover;
 width: 100%;
 max-height: 85%;
@@ -623,9 +634,9 @@ background-color: white;
 border: 1px solid rgba(0, 0, 0, 0.05);
 align-items: center;
 display: flex;
-padding-left: 5px;
-}
+padding-left: 5px;}
 .menu ul li:nth-child(2):hover .menu-2 ul {display: block;}
+.menu-active {border-bottom:2px solid rgba(0, 0, 0, 0.2)}
 .footer-main {width: 100%;
 height: 50px;
 background-color: black;}
@@ -680,10 +691,21 @@ color: var(--text-color2);}
     color: #F172A1;
     font-size: 16px;
     border-top: 1px solid rgba(0, 0, 0, 0.1);}
+    /* tạo hiệu ứng cho hotline */
+   .listing-product .row {display: flex;}
+   .fillter {font-size: 20px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    outline: none;
+    float: right;
+    margin-right: 20px;
+    }
+
 
 
 /* responsive */
 @media screen and (max-width: 1200px){
+    .hotline {display: none;}
     .advantage {display: none;}
     .advantage {display: none;}
     .content2 {display: unset;
@@ -810,3 +832,15 @@ margin-left: 0;}
     .product-quantity {width: 30px;
         font-size: 12px;
         margin-left: 6px;}}
+#back-to-top{
+    width: 30px;
+    height: 30px;
+    background-color: var(--text-color2);
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;}
+#back-to-top:hover {background-color: blue;}
