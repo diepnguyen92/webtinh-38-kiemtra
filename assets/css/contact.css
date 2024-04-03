@@ -1,13 +1,10 @@
 * {margin: 0;
 padding: 0;
 box-sizing: border-box;}
-
 .content:hover {border: unset;}
 .menu-active {border-bottom:2px solid rgba(0, 0, 0, 0.2)}
-
 .infor-map {display: flex;}
 .map {width: 70%;}
-
 .infor {width: 30%;
 height: 600px;
 border: 1px solid rgba(0, 0, 0, 0.2);

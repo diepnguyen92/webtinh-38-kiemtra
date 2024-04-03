@@ -1239,14 +1239,7 @@ function showProduct(category) {
     // Xóa nội dung cũ trước khi hiển thị mới
     categoryContent2.innerHTML = "";
     productSp2.innerHTML = "";
-  // Thêm tiêu đề
-  const categoryTitle = document.createElement("div");
-  categoryTitle.classList.add("tittle-fillter")
-  categoryTitle.innerHTML=`
-  <div class="container">Kết quả tìm kiếm:<div>
-  `
 
- categoryContent2.appendChild(categoryTitle);
     // Hiển thị các sản phẩm tìm được
     category.forEach((product) => {
         const productHTML = `
