@@ -819,11 +819,7 @@ const renderData = (listData) => {
   return HTML;
 };
 
-rowJsHt.innerHTML = renderData(listDataHt);
-rowJsHs.innerHTML = renderData(listDataHs);
-rowjsHsn.innerHTML = renderData(listDataHsn);
-rowJsHkt.innerHTML = renderData(listDataHkt);
-rowJsHl.innerHTML = renderData(listDataHl);
+
 
 const renderDataHot = (listData) => {
   let HTMLH = ``;
@@ -851,8 +847,6 @@ const renderDataHot = (listData) => {
 
 
 
-rowHot.innerHTML = renderDataHot(listDataHot);
-rowNew.innerHTML = renderDataHot(listDataNew);
 // truy cập sp bán chạy, new
 let btnListing = document.querySelectorAll(".btn-listing");
 let tabContent = document.querySelectorAll(".tab-content");
@@ -1240,12 +1234,8 @@ function showProduct(category) {
     categoryContent2.innerHTML = "";
     productSp2.innerHTML = "";
   // Thêm tiêu đề
-  const categoryTitle = document.createElement("div");
-  categoryTitle.classList.add("tittle-fillter")
-  categoryTitle.innerHTML=`
-  <div class="container">Kết quả tìm kiếm:<div>
-  `
-
+  const categoryTitle = document.createElement("h2");
+  categoryTitle.textContent = "Danh sách sản phẩm"; // Thay đổi tiêu đề theo nhu cầu
  categoryContent2.appendChild(categoryTitle);
     // Hiển thị các sản phẩm tìm được
     category.forEach((product) => {
@@ -1279,11 +1269,11 @@ function showProduct(category) {
   };
 // cuộn lên đầu trang
 // truy cập nút
-const backTop = document.getElementById("back-to-top")
-console.log(backTop);
-// sự kiện click
-backTop.addEventListener('click', ()=>{
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'});
-})
+// const backTop = document.getElementById("back-to-top")
+// console.log(backTop);
+// // sự kiện click
+// backTop.addEventListener('click', ()=>{
+//   window.scrollTo({
+//     top: 0,
+//     behavior: 'smooth'});
+// })
